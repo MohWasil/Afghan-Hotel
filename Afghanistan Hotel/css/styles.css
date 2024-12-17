@@ -1,0 +1,353 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --primary-color: #f3f3f3;
+  --secondary-color: #e6f3ff;
+  --third-color: #cce7ff;
+  --white-color: #fff;
+  --fourd-color: #0f4357;
+  --fifth-color: #e5a734;
+  --sixth-color: #1e85ae;
+  --max-width: 1200px;
+}
+
+a{
+  display: flex;
+  text-decoration: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 1rem;
+  margin: 0 0.5rem;
+  letter-spacing: 0.1rem;
+  background: transparent;
+}
+body{
+  font-family: 'Fahkwang', sans-serif;
+  background: var(--secondary-color);
+}
+
+/* Nav Bar section*/
+
+.navbar{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+}
+.menue-wrap{
+  display: flex;
+  align-items: center;
+}
+ul{
+  display: flex;
+  list-style-type: none;
+ }
+ul li a{
+   padding: 1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ul li a:hover{
+  color: var(--white-color);
+}
+.btn::before{
+  content: '';
+  position: absolute;
+  width: 6rem;
+  height: 50%;
+  background: var(--fifth-color);
+  z-index: -1;
+  transition:  0.5s;
+  transform-origin: 0 ;
+  transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+  transform: scaleX(0);
+}
+.btn:hover::before{
+  transform: scaleX(1);
+}
+
+/* Header section */
+
+#header{
+  background: url('../img/Saloon.jpg') no-repeat center center/cover;
+  height: 100vh;
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  }
+div.header-main{
+  max-width: var(--max-width);
+  margin: auto;
+  position: relative;
+}
+a.Afg{
+  color: var(--fifth-color);
+  font-size: 1.5rem;
+  font-family: 'Tangerine', cursive;
+  font-weight: bold;
+}
+#header::before{
+  content: '';
+  background: var(--fourd-color);
+  opacity: 0.7;
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.header-title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+}
+.header-title-content{
+  padding: 1rem;
+}
+h1.header-title-content{
+ font-size: 3rem;
+ letter-spacing: 2px; 
+}
+.header-title p{
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+span.enjoy{
+  color: var(--fifth-color);
+}
+
+a.header-btn{
+  color: var(--white-color);
+  background:var(--fifth-color);
+  letter-spacing: 1px;
+}
+a.header-btn:hover{
+  background: var(--white-color);
+  color: #000;
+  transition: all 0.4s;
+}
+
+/* Body section */
+
+.service-title{
+  margin: 3rem 0;
+  text-align: center;
+  line-height: 2;
+  color: var(--fifth-color);
+}
+.service-title h2{
+  word-spacing: 0.1rem;
+  font-size: 2rem;
+}
+.service-title p{
+  word-spacing: 0.1rem;
+  font-size: 1.2rem;
+  color: var(--fourd-color);
+}
+.body-container{
+  padding: 0 1rem;
+  max-width: var(--max-width);
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 0.5rem;
+}
+img{
+  width: 100%; 
+  height: 100%;
+}
+img.coffee{
+  height: 100%;
+}
+img.icon1{
+  width: 5em;
+}
+div.body-content:hover{
+  transform: scale(0.9);
+}
+#service div.body-content::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--fifth-color);
+  transition: 0.3s;
+  transform-origin: top left;
+  transform: scale(0);
+  opacity: 0.5;
+}
+#service div.body-content:hover::before{
+  transform: scale(1);
+  transition-delay: 0.1s;
+}
+#service div.body-content::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--fifth-color);
+  transition: 0.4s;
+  transform-origin: top left;
+  transform: scale(0);
+  opacity: 0.7;
+}
+#service div.body-content:hover::after{
+  transform: scale(1);
+  transition-delay: 0.2s;
+}
+.body-content-text{
+  position: absolute;
+  top: -3.2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 0 1rem;
+  color: var(--white-color);
+  line-height: 1.4;
+  visibility: hidden;
+  cursor: default;
+  transform-origin: top left; 
+  z-index: 1;
+}
+.body-content:hover .body-content-text{
+  visibility: visible;
+  transform: translateY(50px);
+  transition-delay: 0.57s;
+}
+.body-content-text h3{
+  font-size: 1.8rem;
+  padding-bottom: 0.3rem;
+}
+.body-content-text p{
+  font-size: 1.1rem;
+}
+
+/* Rooms section */
+.room-book{
+  height: 100vh;
+}
+.service-content{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+  max-width: var(--max-width);
+  height: 100%;
+  margin: auto;
+  padding: 3rem 1rem;
+}
+.front-face,.back-face, .content{
+  position: absolute;
+}
+div.card{
+  position: relative;
+  left: 50%;
+  margin-top: 10rem;
+  height: 150%;
+  width: 100%;
+  transform: translate(-50%, -80%);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+.front-face, .back-face{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: transform .7s cubic-bezier(.4,.2,.2,1);
+}
+.f1{
+  background: url('../img/room3.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.f2{
+  background: url('../img/room1.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.f3{
+ background: url('../img/room2.jpg');
+ background-size: cover;
+ background-position: center;
+}
+.content{
+  left: 0;
+  top: 50%;
+  width: 100%;
+  perspective: 100px;
+  transform: translateY(-50%) translateZ(60px) scale(.94);
+}
+.card:hover > .back-face{
+  transform: rotateY(0);
+}
+.card:hover > .front-face{
+  transform: rotateY(-180deg);
+}
+.back-face{
+  transform: rotateY(180deg);
+  background: var(--fourd-color);
+}
+.back{
+  color: #fff;
+  line-height: 1.5;
+  font-weight: lighter;
+}
+.back a{
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+a.price{
+  margin: 0.5em 1.7rem;
+}
+
+/* Footer */
+footer{
+  display: grid;
+  background: var(--fourd-color);
+  height: 30vh;
+  padding: 0 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6rem;
+}
+footer div.footer-details{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 3rem;
+  text-align: center;
+  line-height: 1.6;
+}
+footer div h3{
+  color: var(--fifth-color);
+  font-size: 1.3rem;
+}
+footer div h5{
+  color: var(--white-color);
+  font-size: 0.9rem;
+  font-weight: lighter;
+  letter-spacing: 1px;
+}
+img.icon{
+  width: 2rem;
+  height: auto;
+}
